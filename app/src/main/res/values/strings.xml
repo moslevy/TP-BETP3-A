@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">API_Rest_Call</string>
+    <string name="id_Auto">Id</string>
+    <string name="marca_Auto">Marca</string>
+    <string name="modelo_Auto">Modelo</string>
+    <string name="Volver_Inicio">Volver Inicio</string>
 </resources>

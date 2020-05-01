@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingTop="100dp"
+    android:paddingRight="30dp"
+    android:paddingBottom="50dp"
+    tools:context=".DetalleActivity">
+
+    <TextView
+        android:id="@+id/auto_id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/auto_marca"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:id="@+id/auto_modelo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Volver_Inicio"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textColor="@color/colorButton"
+        android:background="@color/colorPrimaryDark"/>
+
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/marca"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/modelo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+</LinearLayout>
