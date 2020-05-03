@@ -3,5 +3,12 @@
     <string name="id_Auto">Id</string>
     <string name="marca_Auto">Marca</string>
     <string name="modelo_Auto">Modelo</string>
-    <string name="Volver_Inicio">Volver Inicio</string>
+    <string name="back_home">Back Home</string>
+    <string name="edit_auto">Edit Auto</string>
+    <string name="get_auto_list">Get Autos List</string>
+    <string name="add_auto">Add Auto</string>
+    <string name="auto_id_hint">Auto ID</string>
+    <string name="auto_marca_hint">Auto Marca</string>
+    <string name="auto_modelo_hint">Auto Modelo</string>
+    <string name="save_auto">Save Auto</string>
 </resources>

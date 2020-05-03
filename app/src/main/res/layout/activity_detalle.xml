@@ -29,6 +29,15 @@
         android:textAlignment="inherit"
         android:textColor="@color/colorPrimaryDark"
         />
+<!--    <EditText-->
+<!--        android:id="@+id/editAutoMarca"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:textSize="70px"-->
+<!--        android:textAlignment="inherit"-->
+<!--        android:textColor="@color/colorPrimaryDark"/>-->
+
 
     <TextView
         android:id="@+id/auto_modelo"
@@ -39,15 +48,60 @@
         android:textAlignment="inherit"
         android:textColor="@color/colorPrimaryDark"/>
 
+<!--    <EditText-->
+<!--        android:id="@+id/editAutoModelo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:textSize="70px"-->
+<!--        android:textAlignment="inherit"-->
+<!--        android:textColor="@color/colorPrimaryDark"/>-->
+
     <Button
         android:id="@+id/button_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Volver_Inicio"
+        android:text="@string/back_home"
         android:fontFamily="sans-serif-black"
         android:textSize="70px"
         android:textColor="@color/colorButton"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/color_btn_back"
+        android:layout_marginBottom="5dp"/>
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_edit_btn"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/edit_auto"
+        android:textColor="@color/colorButton"
+        android:textSize="70px"
+        android:layout_marginBottom="5dp"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/btnSave"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:textSize="70px"-->
+<!--        android:text="Save"-->
+<!--        android:background="@color/color_btn_save"-->
+<!--        android:textColor="@color/colorButton"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        />-->
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:textSize="70px"
+        android:text="Delete Auto"
+        android:background="@color/color_btn_delete"
+        android:textColor="@color/colorButton"
+        />
+
 
 
 </LinearLayout>

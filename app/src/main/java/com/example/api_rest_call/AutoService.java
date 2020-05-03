@@ -5,6 +5,7 @@ import android.text.style.UpdateAppearance;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -42,24 +43,25 @@ public interface AutoService {
     String API_ROUTE_UPDATE = "app/api/update/{id}";
 
     @PUT(API_ROUTE_UPDATE)
-    Call<Auto> updateAuto(@Path("id") String idAuto);
+    Call<Auto> updateAuto(@Path("id") String idAuto, @Body Auto auto);
 
 
     /**
-     *  Definicion de ruta para borrar auto.
+     * Definicion de ruta para borrar auto.
      */
     String API_ROUTE_DELETE = "app/api/delete/{id}";
 
     @DELETE(API_ROUTE_DELETE)
     Call<Auto> removeAuto(@Path("id") String idAuto);
 
+
     /**
-     *  Definicion de ruta para crear auto.
+     * Definicion de ruta para crear auto.
      */
 
     String API_ROUTE_CREATE = "/app/api/create";
-    @POST(API_ROUTE_CREATE)
-    Call<Auto> createAuto(Auto auto);
 
+    @POST(API_ROUTE_CREATE)
+    Call<Auto> createAuto(@Body Auto auto);
 
 }
