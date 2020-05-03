@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.i("DATA:", data_autos.get(position).getId() + " - " + data_autos.get(position).getModelo());
                 startActivity(intent);
             }
-
             ;
         });
 
