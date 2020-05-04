@@ -62,6 +62,6 @@ public interface AutoService {
     String API_ROUTE_CREATE = "/app/api/create";
 
     @POST(API_ROUTE_CREATE)
-    Call<Auto> createAuto(@Body Auto auto);
+    Call<Void> createAuto(@Body Auto auto);
 
 }

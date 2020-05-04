@@ -7,8 +7,8 @@ public class Auto {
     private String marca;
     private String modelo;
 
-    public Auto (String id, String marca, String modelo){
-        this.id = id;
+    public Auto(String marca, String modelo) {
+//        this.id = id;
         this.marca = marca;
         this.modelo = modelo;
     }
@@ -23,6 +23,7 @@ public class Auto {
     }
 
     public String getMarca() {
+
         return marca;
     }
 

@@ -128,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnAddAuto:
                 Toast.makeText(this, "Button AddAuto clicekd", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, AutoActivity.class);
+                startActivity(intent);
                 break;
         }
     }
