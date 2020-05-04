@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,12 +28,10 @@ public class DetalleActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-//        Button btnDel = (Button) findViewById(R.id.btnDel);
-
         autoService = APIUtils.getAutoService();
 
         Bundle extras = getIntent().getExtras();
-        final String id = extras.getString("id");
+        String id = extras.getString("id");
 
 /**
  * Retrofit retrofit = new Retrofit.Builder()
@@ -46,7 +47,7 @@ public class DetalleActivity extends AppCompatActivity {
 
         AutoService autoService = APIUtils.getAutoService();
 
-        Call<Auto> http_call = autoService.getAuto(id);
+        final Call<Auto> http_call = autoService.getAuto(id);
 
         http_call.enqueue(new Callback<Auto>() {
             @Override
@@ -60,11 +61,6 @@ public class DetalleActivity extends AppCompatActivity {
                 marca.setText(auto.getMarca());
                 TextView modelo = (TextView) findViewById(R.id.auto_modelo);
                 modelo.setText(auto.getModelo());
-
-//                Toast.makeText(
-//                        DetalleActivity.this,
-//                        auto.getMarca(),
-//                        Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -84,19 +80,29 @@ public class DetalleActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-
         });
 
-        final Button btnDel = findViewById(R.id.btnDel);
+
+        Button btnDel = findViewById(R.id.btnDel);
         btnDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Toast.makeText(DetalleActivity.this, "Aprete Delete", Toast.LENGTH_LONG);
+                    APIUtils.getAutoService().removeAuto("id");
+                    http_call.enqueue(new Callback<Auto>() {
+                        @Override
+                        public void onResponse(Call<Auto> call, Response<Auto> response) {
+                            Toast.makeText(DetalleActivity.this, "Auto Borrado con éxito!", Toast.LENGTH_SHORT);
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                        }
 
-                    //APIUtils.getAutoService().removeAuto("id");
-                    //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    //startActivity(intent);
+                        @Override
+                        public void onFailure(Call<Auto> call, Throwable t) {
+                            Toast.makeText(DetalleActivity.this, "Hubo un error borrando un auto", Toast.LENGTH_LONG);
+                        }
+                    });
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -105,4 +111,6 @@ public class DetalleActivity extends AppCompatActivity {
 
 
     }
+
+
 }

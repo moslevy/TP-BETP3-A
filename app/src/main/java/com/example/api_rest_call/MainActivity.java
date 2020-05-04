@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ListAdapter adaptador;
     ArrayList<Auto> data_autos = new ArrayList<>();
-    //Button btnAddAuto;
-    //Button btnGetAutosList;
     ListView listView;
 
     @Override
@@ -112,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFailure(Call<List<Auto>> call, Throwable t) {
-                // SI el servidor o la llamada no puede ejecutarse, muestro un mensaje de eror:
+                // Si el servidor o la llamada no puede ejecutarse, muestro un mensaje de eror:
                 Toast.makeText(MainActivity.this, "Hubo un error con la llamada a la API", Toast.LENGTH_LONG);
             }
         });

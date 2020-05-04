@@ -30,8 +30,6 @@ public class AutoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto);
 
-
-//        final EditText id = (EditText) findViewById(R.id.txtId);
         final EditText marca = (EditText) findViewById(R.id.txtMarca);
         final EditText modelo = (EditText) findViewById(R.id.txtModelo);
 
@@ -67,15 +65,6 @@ public class AutoActivity extends AppCompatActivity {
         });
     }
 
-
-
-    private void deleteDeal() {
-        if (auto == null) {
-            Toast.makeText(this, "Please save the deal before deleting", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        //mDatabaseReference.child(deal.getId()).removeValue();
-    }
 
     private void backToList() {
         Intent intent = new Intent(this, MainActivity.class);
