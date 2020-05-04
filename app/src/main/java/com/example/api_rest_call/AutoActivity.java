@@ -39,9 +39,7 @@ public class AutoActivity extends AppCompatActivity {
         createAutoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Auto auto = new Auto(
-//                        id.getText().toString(),
                         marca.getText().toString(),
                         modelo.getText().toString()
                 );
@@ -52,18 +50,19 @@ public class AutoActivity extends AppCompatActivity {
                         public void onResponse(Call<Void> call, Response<Void> response) {
                             Toast.makeText(AutoActivity.this, "Se creo el auto exitosamente!", Toast.LENGTH_SHORT);
                         }
-
                         @Override
                         public void onFailure(Call<Void> call, Throwable t) {
-
+                            Toast.makeText(AutoActivity.this, "Hubo un error con la creacion del auto", Toast.LENGTH_LONG);
                         }
                     });
-
                     Log.i("success", ":)");
+
                 }catch (Exception e){
                     e.printStackTrace();
                     Log.i("error", e.getMessage());
                 }
+                clean();
+
             }
         });
     }
