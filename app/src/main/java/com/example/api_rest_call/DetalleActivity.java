@@ -17,7 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class DetalleActivity extends AppCompatActivity {
+public class DetalleActivity extends AppCompatActivity implements View.OnClickListener {
 
     AutoService autoService;
 
@@ -29,6 +29,11 @@ public class DetalleActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         autoService = APIUtils.getAutoService();
+
+        Button btnDel = (Button) findViewById(R.id.btnDel);
+        Button btnUpdate = (Button) findViewById(R.id.button_update);
+        btnDel.setOnClickListener(this);
+        btnUpdate.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
         String id = extras.getString("id");
@@ -83,34 +88,27 @@ public class DetalleActivity extends AppCompatActivity {
         });
 
 
-        Button btnDel = findViewById(R.id.btnDel);
-        btnDel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    APIUtils.getAutoService().removeAuto("id");
-                    http_call.enqueue(new Callback<Auto>() {
-                        @Override
-                        public void onResponse(Call<Auto> call, Response<Auto> response) {
-                            Toast.makeText(DetalleActivity.this, "Auto Borrado con éxito!", Toast.LENGTH_SHORT);
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
-                        }
+    }
 
-                        @Override
-                        public void onFailure(Call<Auto> call, Throwable t) {
-                            Toast.makeText(DetalleActivity.this, "Hubo un error borrando un auto", Toast.LENGTH_LONG);
-                        }
-                    });
+    public void deleteAuto() {
+        //Add code to delete here.
+    }
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
+    public void updateAuto() {
+        //Add code to update here.
 
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnDel:
+                deleteAuto();
+                break;
+            case R.id.button_update:
+                updateAuto();
+                break;
 
+        }
+    }
 }
