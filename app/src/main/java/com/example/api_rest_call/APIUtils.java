@@ -4,10 +4,7 @@ import retrofit2.Retrofit;
 
 public class APIUtils {
     private APIUtils() {
-
-    }
-
-    ;
+    };
 
     public static final String API_URL = "https://us-central1-be-tp3-a.cloudfunctions.net/";
 

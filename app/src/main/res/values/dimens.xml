@@ -2,4 +2,5 @@
 <resources>
     <dimen name="text_margin_standard">50px</dimen>
     <dimen name="text_margin_large">50px</dimen>
+    <dimen name="text_size">50px</dimen>
 </resources>

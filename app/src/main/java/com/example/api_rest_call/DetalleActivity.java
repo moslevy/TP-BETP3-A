@@ -15,51 +15,35 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.DELETE;
+import retrofit2.http.Path;
 
 
-public class DetalleActivity extends AppCompatActivity implements View.OnClickListener {
+public class DetalleActivity extends AppCompatActivity {
 
-    AutoService autoService;
+    Auto miAuto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        autoService = APIUtils.getAutoService();
-
-        Button btnDel = (Button) findViewById(R.id.btnDel);
-        Button btnUpdate = (Button) findViewById(R.id.button_update);
-        btnDel.setOnClickListener(this);
-        btnUpdate.setOnClickListener(this);
-
         Bundle extras = getIntent().getExtras();
+
         String id = extras.getString("id");
-
-/**
- * Retrofit retrofit = new Retrofit.Builder()
- *                 .baseUrl("https://us-central1-be-tp3-a.cloudfunctions.net/")
- *                 .addConverterFactory(GsonConverterFactory.create())
- *                 .build();
- *
- *         // Defnimos la interfaz para que utilice la base retrofit de mi aplicacion ()
- *         AutoService autoService = retrofit.create(AutoService.class);
- */
-
-        RetrofitClient retrofitClient = new RetrofitClient();
 
         AutoService autoService = APIUtils.getAutoService();
 
         final Call<Auto> http_call = autoService.getAuto(id);
+        final Call<Auto> http_del = autoService.removeAuto(id);
+
+//      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         http_call.enqueue(new Callback<Auto>() {
             @Override
             public void onResponse(Call<Auto> call, Response<Auto> response) {
                 Auto auto = response.body();
                 Log.i("Funciona", "OK");
-
                 TextView idAuto = (TextView) findViewById(R.id.auto_id);
                 idAuto.setText(auto.getId());
                 TextView marca = (TextView) findViewById(R.id.auto_marca);
@@ -74,41 +58,48 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        Button buttonBack = findViewById(R.id.button_back);
+        final Button buttonBack = findViewById(R.id.button_back);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
+                    backToStart();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
 
+        Button buttonDelete = (Button) findViewById(R.id.btnDel);
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    http_del.enqueue(new Callback<Auto>() {
+                        @Override
+                        public void onResponse(Call<Auto> call, Response<Auto> response) {
+                            Toast.makeText(DetalleActivity.this, "Deleted OK", Toast.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        public void onFailure(Call<Auto> call, Throwable t) {
+                            Toast.makeText(DetalleActivity.this, "Error Deleting", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                backToStart();
+            }
+        });
+
 
     }
 
-    public void deleteAuto() {
-        //Add code to delete here.
-    }
-
-    public void updateAuto() {
-        //Add code to update here.
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnDel:
-                deleteAuto();
-                break;
-            case R.id.button_update:
-                updateAuto();
-                break;
-
-        }
+    private void backToStart() {
+        Intent intent = new Intent(DetalleActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

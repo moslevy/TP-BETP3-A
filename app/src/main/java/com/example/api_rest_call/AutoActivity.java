@@ -19,7 +19,6 @@ import retrofit2.http.Body;
 
 public class AutoActivity extends AppCompatActivity {
 
-//    EditText txtId;
     EditText txtMarca;
     EditText txtModelo;
     Auto auto;
@@ -35,6 +34,7 @@ public class AutoActivity extends AppCompatActivity {
 
         Button createAutoButton = (Button) findViewById(R.id.btnSave);
         createAutoButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Auto auto = new Auto(
@@ -42,15 +42,16 @@ public class AutoActivity extends AppCompatActivity {
                         modelo.getText().toString()
                 );
                 try{
-                    Call<Void> http_call =APIUtils.getAutoService().createAuto(auto);
+                    Call<Void> http_call = APIUtils.getAutoService().createAuto(auto);
                     http_call.enqueue(new Callback<Void>() {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {
-                            Toast.makeText(AutoActivity.this, "Se creo el auto exitosamente!", Toast.LENGTH_SHORT);
+                                Toast.makeText(AutoActivity.this, "Se creo el auto exitosamente!", Toast.LENGTH_LONG).show();
+                                backToList();
                         }
                         @Override
                         public void onFailure(Call<Void> call, Throwable t) {
-                            Toast.makeText(AutoActivity.this, "Hubo un error con la creacion del auto", Toast.LENGTH_LONG);
+                            Toast.makeText(AutoActivity.this, "Hubo un error con la creacion del auto", Toast.LENGTH_LONG).show();
                         }
                     });
                     Log.i("success", ":)");
@@ -60,7 +61,6 @@ public class AutoActivity extends AppCompatActivity {
                     Log.i("error", e.getMessage());
                 }
                 clean();
-
             }
         });
     }
@@ -72,16 +72,10 @@ public class AutoActivity extends AppCompatActivity {
     }
 
     private void clean() {
-//        txtId.setText("");
         txtMarca.setText("");
-        txtModelo.setText("");
         txtMarca.requestFocus();
-//        txtId.requestFocus();
+        txtModelo.setText("");
     }
 
-    private void enableEditTexts(boolean isEnabled) {
-//        txtId.setEnabled(isEnabled);
-        txtMarca.setEnabled(isEnabled);
-        txtModelo.setEnabled(isEnabled);
-    }
+
 }

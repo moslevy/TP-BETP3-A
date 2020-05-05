@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        });
 
         listView = (ListView) findViewById(android.R.id.list);
+
         listView.setAdapter(adaptador);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.i("DATA:", data_autos.get(position).getId() + " - " + data_autos.get(position).getModelo());
                 startActivity(intent);
             }
+
             ;
         });
 
@@ -71,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        un boton para que mostrar la lista cuando el usuario presiona el boton "Get Autos' List"
 //        this.getAutosList();
     }
-
 
 
     public void getAutosList() {

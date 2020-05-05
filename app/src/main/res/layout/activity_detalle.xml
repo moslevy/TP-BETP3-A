@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:fontFamily="sans-serif-black"
-        android:textSize="50px"
+        android:textSize="@dimen/text_size"
         android:textAlignment="inherit"
         android:textColor="@color/colorPrimaryDark" />
 
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:fontFamily="sans-serif-black"
-        android:textSize="70px"
+        android:textSize="@dimen/text_size"
         android:textAlignment="inherit"
         android:textColor="@color/colorPrimaryDark"
         />
@@ -34,7 +34,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="50dp"-->
 <!--        android:fontFamily="sans-serif-black"-->
-<!--        android:textSize="70px"-->
+<!--        android:textSize="@dimen/text_size"-->
 <!--        android:textAlignment="inherit"-->
 <!--        android:textColor="@color/colorPrimaryDark"/>-->
 
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:fontFamily="sans-serif-black"
-        android:textSize="70px"
+        android:textSize="@dimen/text_size"
         android:textAlignment="inherit"
         android:textColor="@color/colorPrimaryDark"/>
 
@@ -53,7 +53,7 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="50dp"-->
 <!--        android:fontFamily="sans-serif-black"-->
-<!--        android:textSize="70px"-->
+<!--        android:textSize="@dimen/text_size"-->
 <!--        android:textAlignment="inherit"-->
 <!--        android:textColor="@color/colorPrimaryDark"/>-->
 
