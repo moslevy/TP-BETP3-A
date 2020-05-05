@@ -21,8 +21,6 @@ import retrofit2.http.Path;
 
 public class DetalleActivity extends AppCompatActivity {
 
-    Auto miAuto;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +30,7 @@ public class DetalleActivity extends AppCompatActivity {
 
         final String id = extras.getString("id");
 
-        final Call<Auto> http_call = APIUtils.getAutoService().getAuto(id);
+        Call<Auto> http_call = APIUtils.getAutoService().getAuto(id);
 
         http_call.enqueue(new Callback<Auto>() {
             @Override
@@ -88,8 +86,6 @@ public class DetalleActivity extends AppCompatActivity {
                 backToStart();
             }
         });
-
-
     }
 
     private void backToStart() {

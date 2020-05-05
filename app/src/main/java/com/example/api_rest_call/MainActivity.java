@@ -34,17 +34,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         adaptador = new AutoAdapter(this, data_autos);
 
-        Button btnGetAutosList = (Button) findViewById(R.id.btnGetAutosList);
         Button btnAddAuto = (Button) findViewById(R.id.btnAddAuto);
-        btnGetAutosList.setOnClickListener(this);
+
         btnAddAuto.setOnClickListener(this);
 
-//        btnGetAutosList.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                getAutosList();
-//            }
-//        });
-
+/**     Si queres habilitar un boton para que cargue la lista, sacar estos comentarios.
+ *
+ *      Button btnGetAutosList = (Button) findViewById(R.id.btnGetAutosList);
+ *      btnGetAutosList.setOnClickListener(this);
+ *      btnGetAutosList.setOnClickListener(new View.OnClickListener() {
+ *             public void onClick(View v) {
+ *                 getAutosList();
+ *             }
+ *         });
+ */
         listView = (ListView) findViewById(android.R.id.list);
 
         listView.setAdapter(adaptador);
@@ -61,17 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ;
         });
 
-
-//        btnAddAuto.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-////                    Intent intent = new Intent(MainActivity.this, AutoActivity.class);
-////                    startActivity(intent);
-//            }
-//        });
-
 //        Deshabilité la vista de la lista automatica ya que implementé
 //        un boton para que mostrar la lista cuando el usuario presiona el boton "Get Autos' List"
-//        this.getAutosList();
+        this.getAutosList();
     }
 
 
@@ -120,10 +115,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnGetAutosList:
-                Toast.makeText(this, "Button Get Autos List", Toast.LENGTH_SHORT).show();
-                getAutosList();
-                break;
+//            case R.id.btnGetAutosList:
+//                Toast.makeText(this, "Button Get Autos List", Toast.LENGTH_SHORT).show();
+//                getAutosList();
+//                break;
             case R.id.btnAddAuto:
                 Toast.makeText(this, "Button AddAuto clicekd", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, AutoActivity.class);
