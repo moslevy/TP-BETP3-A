@@ -52,7 +52,7 @@ public interface AutoService {
     String API_ROUTE_DELETE = "app/api/delete/{id}";
 
     @DELETE(API_ROUTE_DELETE)
-    Call<Auto> removeAuto(@Path("id") String idAuto);
+    Call<Void> removeAuto(@Path("id") String idAuto);
 
 
     /**

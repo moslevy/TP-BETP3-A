@@ -30,14 +30,9 @@ public class DetalleActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        String id = extras.getString("id");
+        final String id = extras.getString("id");
 
-        AutoService autoService = APIUtils.getAutoService();
-
-        final Call<Auto> http_call = autoService.getAuto(id);
-        final Call<Auto> http_del = autoService.removeAuto(id);
-
-//      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        final Call<Auto> http_call = APIUtils.getAutoService().getAuto(id);
 
         http_call.enqueue(new Callback<Auto>() {
             @Override
@@ -74,20 +69,20 @@ public class DetalleActivity extends AppCompatActivity {
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 try {
-                    http_del.enqueue(new Callback<Auto>() {
+                    Call<Void> http_delete = APIUtils.getAutoService().removeAuto(id);
+                    http_delete.enqueue(new Callback<Void>() {
                         @Override
-                        public void onResponse(Call<Auto> call, Response<Auto> response) {
+                        public void onResponse(Call<Void> call, Response<Void> response) {
                             Toast.makeText(DetalleActivity.this, "Deleted OK", Toast.LENGTH_LONG).show();
                         }
 
                         @Override
-                        public void onFailure(Call<Auto> call, Throwable t) {
-                            Toast.makeText(DetalleActivity.this, "Error Deleting", Toast.LENGTH_LONG).show();
+                        public void onFailure(Call<Void> call, Throwable t) {
+                            Toast.makeText(DetalleActivity.this, "Error deleting auto", Toast.LENGTH_LONG).show();
                         }
                     });
-                } catch (Exception e) {
+                }catch(Exception e){
                     e.printStackTrace();
                 }
                 backToStart();
