@@ -21,4 +21,4 @@ La solucion debe contemplar todos los elementos que hemos visto hasta ahora:
 - Diez (10) de Mayo 2020.
 
 #Integrantes: 
--
+- Moses Levy
