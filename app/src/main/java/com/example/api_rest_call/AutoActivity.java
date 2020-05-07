@@ -21,7 +21,6 @@ public class AutoActivity extends AppCompatActivity {
 
     EditText txtMarca;
     EditText txtModelo;
-    Auto auto;
 
 
     @Override

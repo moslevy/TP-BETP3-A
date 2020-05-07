@@ -11,14 +11,14 @@
     android:paddingBottom="50dp"
     tools:context=".DetalleActivity">
 
-    <TextView
-        android:id="@+id/auto_id"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:fontFamily="sans-serif-black"
-        android:textSize="@dimen/text_size"
-        android:textAlignment="inherit"
-        android:textColor="@color/colorPrimaryDark" />
+<!--    <TextView-->
+<!--        android:id="@+id/auto_id"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:textSize="@dimen/text_size"-->
+<!--        android:textAlignment="inherit"-->
+<!--        android:textColor="@color/colorPrimaryDark" />-->
 
     <TextView
         android:id="@+id/auto_marca"
@@ -29,14 +29,6 @@
         android:textAlignment="inherit"
         android:textColor="@color/colorPrimaryDark"
         />
-<!--    <EditText-->
-<!--        android:id="@+id/editAutoMarca"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:fontFamily="sans-serif-black"-->
-<!--        android:textSize="@dimen/text_size"-->
-<!--        android:textAlignment="inherit"-->
-<!--        android:textColor="@color/colorPrimaryDark"/>-->
 
 
     <TextView
@@ -48,25 +40,16 @@
         android:textAlignment="inherit"
         android:textColor="@color/colorPrimaryDark"/>
 
-<!--    <EditText-->
-<!--        android:id="@+id/editAutoModelo"-->
+<!--    <Button-->
+<!--        android:id="@+id/button_back"-->
 <!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/back_home"-->
 <!--        android:fontFamily="sans-serif-black"-->
-<!--        android:textSize="@dimen/text_size"-->
-<!--        android:textAlignment="inherit"-->
-<!--        android:textColor="@color/colorPrimaryDark"/>-->
-
-    <Button
-        android:id="@+id/button_back"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/back_home"
-        android:fontFamily="sans-serif-black"
-        android:textSize="70px"
-        android:textColor="@color/colorButton"
-        android:background="@color/color_btn_back"
-        android:layout_marginBottom="5dp"/>
+<!--        android:textSize="70px"-->
+<!--        android:textColor="@color/colorButton"-->
+<!--        android:background="@color/color_btn_back"-->
+<!--        android:layout_marginBottom="5dp"/>-->
 
     <Button
         android:id="@+id/button_update"
@@ -78,18 +61,6 @@
         android:textColor="@color/colorButton"
         android:textSize="70px"
         android:layout_marginBottom="5dp"/>
-
-<!--    <Button-->
-<!--        android:id="@+id/btnSave"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:fontFamily="sans-serif-black"-->
-<!--        android:textSize="70px"-->
-<!--        android:text="Save"-->
-<!--        android:background="@color/color_btn_save"-->
-<!--        android:textColor="@color/colorButton"-->
-<!--        android:layout_marginBottom="5dp"-->
-<!--        />-->
 
     <Button
         android:id="@+id/btnDel"

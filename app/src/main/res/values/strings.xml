@@ -5,7 +5,7 @@
     <string name="modelo_Auto">Modelo</string>
     <string name="back_home">Back Home</string>
     <string name="edit_auto">Edit Auto</string>
-    <string name="get_auto_list">Get Autos List</string>
+    <string name="get_auto_list">Refresh List</string>
     <string name="add_auto">Add Auto</string>
     <string name="auto_id_hint">Auto ID</string>
     <string name="auto_marca_hint">Auto Marca</string>

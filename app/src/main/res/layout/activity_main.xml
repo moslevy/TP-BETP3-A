@@ -12,20 +12,21 @@
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
-        android:layout_height="500dp" />
+        android:layout_height="471dp"
+        />
 
-<!--    <Button-->
-<!--        android:id="@+id/btnGetAutosList"-->
-<!--        style="@style/Widget.AppCompat.Button"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:layout_marginBottom="5dp"-->
-<!--        android:background="@color/color_btn_back"-->
-<!--        android:fontFamily="sans-serif-black"-->
-<!--        android:text="@string/get_auto_list"-->
-<!--        android:textColor="@color/colorButton"-->
-<!--        android:textSize="50px" />-->
+    <Button
+        android:id="@+id/btnGetAutosList"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/color_btn_back"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/get_auto_list"
+        android:textColor="@color/colorButton"
+        android:textSize="50px" />
 
     <Button
         android:id="@+id/btnAddAuto"

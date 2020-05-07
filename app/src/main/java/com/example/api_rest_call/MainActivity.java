@@ -38,16 +38,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnAddAuto.setOnClickListener(this);
 
-/**     Si queres habilitar un boton para que cargue la lista, sacar estos comentarios.
- *
- *      Button btnGetAutosList = (Button) findViewById(R.id.btnGetAutosList);
- *      btnGetAutosList.setOnClickListener(this);
- *      btnGetAutosList.setOnClickListener(new View.OnClickListener() {
- *             public void onClick(View v) {
- *                 getAutosList();
- *             }
- *         });
- */
+
+       Button btnGetAutosList = (Button) findViewById(R.id.btnGetAutosList);
+       btnGetAutosList.setOnClickListener(this);
+
+       btnGetAutosList.setOnClickListener(new View.OnClickListener() {
+              public void onClick(View v) {
+                  getAutosList();
+              }
+  });
+
         listView = (ListView) findViewById(android.R.id.list);
 
         listView.setAdapter(adaptador);
@@ -71,22 +71,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void getAutosList() {
-        /**
-         * Reemplace este codigo en una clase llamada RetrofitClient
-         * // Establezco una relacion de mi app con este endpoint:
-         *       Retrofit retrofit = new Retrofit.Builder()
-         *                .baseUrl("https://us-central1-be-tp3-a.cloudfunctions.net/")
-         *                .addConverterFactory(GsonConverterFactory.create())
-         *                .build();
-         */
-
-        /**
-         * Reemplace este codigo en una clase llamada APIUtils
-         * // Defnimos la interfaz para que utilice la base retrofit de mi aplicacion ()
-         *        AutoService autoService = retrofit.create(AutoService.class);
-         */
-
-        //RetrofitClient retrofitClient = new RetrofitClient();
 
         AutoService autoService = APIUtils.getAutoService();
 
@@ -115,12 +99,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-//            case R.id.btnGetAutosList:
-//                Toast.makeText(this, "Button Get Autos List", Toast.LENGTH_SHORT).show();
-//                getAutosList();
-//                break;
+            case R.id.btnGetAutosList:
+                Toast.makeText(this, "Button Get Autos List", Toast.LENGTH_SHORT).show();
+                getAutosList();
+                break;
             case R.id.btnAddAuto:
-                Toast.makeText(this, "Button AddAuto clicekd", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Button AddAuto clicked", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, AutoActivity.class);
                 startActivity(intent);
                 break;
